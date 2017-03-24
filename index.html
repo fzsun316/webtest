@@ -1,0 +1,71 @@
+---
+layout: default
+---
+        <div><video autoplay="" id="bgvid" loop="" oncanplay=""><source src=
+        "images/kuala_lumpur_timelapse_converted.mp4" type="video/mp4"></video></div>
+        <!-- Header -->
+        <!-- <header id="header" class="">
+        <video autoplay="" id="bgvid" loop="" poster="polina.jpg"><source src="images/kuala_lumpur_timelapse.mp4" type="video/mp4"></video>
+        </header> -->
+        <header id="header" class="alt">
+            <!-- <span class="logo" style="font-size: 400%"> --><!-- <img src="images/logo2.svg" alt="auv-iitk" /> -->
+            <!-- <video autoplay="" id="bgvid" loop="" poster="polina.jpg" oncanplay="$(this)[0].play()"><source src=
+        "images/kuala_lumpur_timelapse.mp4" type="video/mp4"></video> -->
+            <!-- SCOPE-Lab</span> -->
+            <span class="typedheader typed"></span> <!-- filled by main.js using typed.js -->
+        </header>
+        <div id="main">
+            <section id="intro" class="main">
+                <div class="spotlight">
+                    <div class="content" style="text-align: left;">
+                        <header class="major"  style="text-align: center;">
+                            <h2>About Us</h2>
+                        </header>
+                        <p>Smart cities and Smart Grids are two exemplars of large scale cyber-physical systems that operate across geographically dispersed environments. With the increasing integration of edge devices, commodity computers, and low power sensors in these domains, we are seeing the emergence of cyber physical systems that operate with heterogeneous computing resources, which are distributed across physical environments. Our research group is exploring these societally important systems focusing on the following research challenges.</p>
+                        <p><u>Development and Operations Management</u> - Traditionally, cyber physical systems have been developed to operate with tightly controlled processes so that the design, analysis, and deployment can be done offline, before the system is deployed. As we think about modern operations that include over the air updates and flexible functionality that are implemented in software, the devops mechanisms used to design enterprise systems are now being used for CPS design. The challenge we face is – how can we ensure that the software engineering principles applied to enterprise structures can be used to guarantee safety and reliability for embedded software that have to operate under the physical constraints imposed by CPS components?</p>
+                        <p><u>System Integration</u> - Our exemplars represent large cyber physical system of systems that pose interesting integration and management challenges. For example, with the advancement of networking concepts we are quickly moving into a world where software applications from different CPS have to communicate with each other. This is a difficult challenge, especially if the systems are not properly orchestrated, the brittleness of their interfaces can lead to faults that can then propagate through the systems to cause failures.</p>
+                        <p><u>System Reliability</u> - System monitoring, prognostics, and fault detection and isolation are big challenges that we face as we scale up systems in size and complexity. Any system that operates over long periods of time has to cope with degradation associated with ageing, operational stress, and environmental conditions, that can result in failures of the associated physical components. Failures and latent bugs in the software add another source of degradation and failure, resulting in unoperational and compromised systems. It remains a challenge to understand and monitor degradation and failure caused by interactions between different subsystems of a large CPS that may operate across multiple physical domains.</p>
+                        <p><u>Computation Platforms</u> - A computation platform must be designed to accommodate and integrate heterogeneous components, operate at multiple time-scales (e.g., real time, near real time, and , long-term), allow for dynamic resource allocation, while accommodating a variety of topologies including edge networks, and providing, safety, reliability, and security guarantees. Our goal is to implement a stringent layered architecture that ensures that the layers interact across safe interface sets, provide efficiency guarantees, and ensure that the faults from a layer propagates across the layer in a way that allows better characterization of failure dynamics.</p>
+                        <p><u>Big Data Analytics and Data Science</u> - Systems such as the grid and Smart Cities are becoming more and more complex, and analysis of these systems using pure model-based approaches is becoming infeasible. On the other hand, the proliferation of data, storage and retrieval mechanisms, the availability of large and distributed computing resources, and the advances in analytics, machine learning, and mining methods is providing new opportunities to understand and act on the system operations. Our challenges here are to develop repositories and tool boxes that support a wide variety of analytics and mining routines, as well as work to address specific Smart City problems.</p>
+                    </div>
+                    <!-- <span class="image"><img src="images/vehicles/varun.jpg" alt="varun" /></span> -->
+                </div>
+            </section>
+            <section class="main special">
+            {% assign sorted = (site.teams | sort: 'date') | reverse %}
+            {% for team in sorted %}
+                <div class="content">
+                    <header class="major">
+                        <h2>{{ team.name }}</h2>
+                    </header>
+                    <!-- <p>{{ team.description }}</p> -->
+                    <br>
+                    {% for people in team.people %}
+                    {% assign teammatey = site.people | where:"key", people  | first %}
+                    <p style="clear: both;">
+                    <span class="image  left" style="max-width: 150px;"><img src="{{ teammatey.image }}" alt="" /></span>
+                    <h3> <b>{{ teammatey.name}}</b> </h3>
+                    {{ teammatey.description }}
+                    <!-- <a href="{{ item.link }}"><i>Read more...</i></a> -->
+                    </p>
+                    <br>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+            </section>
+
+            <section id="fourth" class="main special">
+                <header class="major">
+                    <h2>Research Projects</h2>
+                </header>
+                    {% for item in site.research %}
+                    <p style="clear: both;">
+                    <span class="image {% cycle 'left', 'right' %}"><img src="{{ item.image }}" alt="" /></span>
+                    <h3> <b>{{ item.title }}</b> </h3>
+                    {{ item.description }}
+                    </p>
+                    <br>
+                    {% endfor %}
+            </section>
+
+        </div>

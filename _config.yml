@@ -1,0 +1,27 @@
+# Site settings
+title: SCOPE-Lab
+email: fzsun316@gmail.com
+copyright_name: SCOPE Lab
+github_username: visor-vu
+# AUV-IITK
+
+collections:
+  vehicles :
+  teams:
+  subteam :
+  competition :
+  research :
+  people:
+
+# used to estimate reading time
+wpm: 150
+
+port: 4444
+permalink: /blog/:title
+
+# jekyll-paginate
+paginate: 5
+paginate_path: blog/page:num
+
+# gem dependencies
+gems: [jekyll-paginate, jekyll-feed, jekyll-gist]
