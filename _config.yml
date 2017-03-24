@@ -3,6 +3,7 @@ title: SCOPE-Lab
 email: fzsun316@gmail.com
 copyright_name: SCOPE Lab
 github_username: visor-vu
+baseurl: /webtest
 # AUV-IITK
 
 collections:
