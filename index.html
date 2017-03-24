@@ -43,7 +43,7 @@ layout: default
                     {% for people in team.people %}
                     {% assign teammatey = site.people | where:"key", people  | first %}
                     <p style="clear: both;">
-                    <span class="image  left" style="max-width: 150px;"><img src="{{ teammatey.image }}" alt="" /></span>
+                    <span class="image  left" style="max-width: 150px;"><img src="{{ site.baseurl }}{{ teammatey.image }}" alt="" /></span>
                     <h3> <b>{{ teammatey.name}}</b> </h3>
                     {{ teammatey.description }}
                     <!-- <a href="{{ item.link }}"><i>Read more...</i></a> -->
@@ -60,7 +60,7 @@ layout: default
                 </header>
                     {% for item in site.research %}
                     <p style="clear: both;">
-                    <span class="image {% cycle 'left', 'right' %}"><img src="{{ item.image }}" alt="" /></span>
+                    <span class="image {% cycle 'left', 'right' %}"><img src="{{ site.baseurl }}{{ item.image }}" alt="" /></span>
                     <h3> <b>{{ item.title }}</b> </h3>
                     {{ item.description }}
                     </p>
